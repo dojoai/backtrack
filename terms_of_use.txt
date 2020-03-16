@@ -1,0 +1,44 @@
+
+TERMS OF USE AGREEMENT
+ 
+This Terms of Use Agreement sets forth Silverstein Properties, Inc.'s ("us", "we", or "our") standards of use of Dojo Backtrack (the "Script"). By using the Script or any of our Services (as defined herein), you (the "User") agree to these terms and conditions ("Terms & Conditions"). If you do not agree to the Terms & Conditions, you should immediately cease all usage of the Script or the Services. We reserve the right, at any time, to modify, alter, or update these Terms & Conditions without prior notice. Modifications shall become effective immediately upon being posted at the repo. Your continued use of the Services after amendments are posted constitutes an acknowledgement and acceptance of the Agreement and its modifications. Except as provided in this paragraph, this Agreement may not be amended.
+ 
+1.           Description of Service
+ 
+We are providing Users withawith tool to analyze meeting calendar. (the "Services"). 
+ 
+2. Disclaimer of Warranties.
+The Script and any other products, services, or technology is provided us on an "as is" and on an "as available" basis.  We make no representations or warranties of any kind, express or implied, regarding the use or the results of this Script or the Services in terms of its correctness, accuracy, reliability, or otherwise. Neither Silverstein Properties, Inc. or its affiliates, successors, assigns and their respective employees, directors and officers shall have any liability for any use of this Script or the Services.  Silverstein Properties, Inc. on behalf of itself and its affiliates, successors, assigns and their respective employees, directors and officers disclaims all warranties with regard to the information provided, including the implied warranties of merchantability and fitness for a particular purpose, and non-infringement. OTHER THAN AS EXPRESSLY SET OUT IN THESE TERMS OR ADDITIONAL TERMS, SILVERSTEIN PROPERTIES, INC. OR OR ITS AFFILIATES, SUCCESSORS, ASSIGNSOR THEIR RESPECTIVE EMPLOYEES, DIRECTORS AND OFFICERS MAKE ANY SPECIFIC PROMISES ABOUT THE SERVICES. WE PROVIDE THE SERVICES "AS IS". SOME JURISDICTIONS PROVIDE FOR CERTAIN WARRANTIES, LIKE THE IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. TO THE EXTENT PERMITTED BY LAW, WE EXCLUDE ALL WARRANTIES.
+ 
+3. Limitation of Liability
+NEITHER SILVERSTEIN PROPERTIES, INC. NOR ITS AFFILIATES, SUCCESSORS, ASSIGNS NOR THEIR RESPECTIVE EMPLOYEES, DIRECTORS AND OFFICERS SHALL BE LIABLE FOR ANY DAMAGES WHATSOEVER, AND IN PARTICULAR SHALL NOT BE LIABLE FOR ANY SPECIAL, INDIRECT, CONSEQUENTIAL, OR INCIDENTAL DAMAGES, OR DAMAGES FOR LOST PROFITS, LOSS OF REVENUE, OR LOSS OF USE, ARISING OUT OF OR RELATED TO THIS WEB SITE OR THE INFORMATION CONTAINED IN IT, WHETHER SUCH DAMAGES ARISE IN CONTRACT, NEGLIGENCE, TORT, UNDER STATUTE, IN EQUITY, AT LAW, OR OTHERWISE, EVEN IF WE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  IN ALL CASES, NEITHER SILVERSTEIN PROPERTIES, INC. NOR ITS AFFILIATES, SUCCESSORS, ASSIGNS NOR THEIR RESPECTIVE EMPLOYEES, DIRECTORS AND OFFICERS, WILL NOT BE LIABLE FOR ANY LOSS OR DAMAGE THAT IS NOT REASONABLY FORESEEABLE. ALL INFORMATION PROVIDED THROUGH OUR SCRIPT, OR DIRECTLY THROUGH OUR SERVICE PROVIDERS ARE FOR ENTERENTERTAINMENT PURPOSES ONLY. Business Uses of the Services If you are using our Services on behalf of a business, that business accepts these terms. It will hold harmless and indemnify Silverstein Properties, Inc., its affiliates, successors, assigns and their respective employees, directors and officers from any claim, suit or action arising from or related to the use of the Services or violation of these terms, including any liability or expense arising from claims, losses, damages, suits, judgments, litigation costs and attorneys' fees.
+ 
+4. Indemnification
+Users agrees to indemnify and hold Silverstein Properties, Inc., its affiliates, successors, assigns and their respective employees, directors and officers, harmless from any claim or demand, including reasonable attorneys' fees and costs, made by any third party due to or arising out of User's use of the Service, the violation of this Agreement, or infringement by User, or other user of the Service using User's computer, of any intellectual property or any other right of any person or entity.
+ 
+5. Modifications and Interruption to the Service
+We reserve the right to modify or discontinue the Service with or without notice to the User. We shall not be liable to User or any third party should we exercise our right to modify or discontinue the Service. User acknowledges and accepts that we do not guarantee continuous, uninterrupted or secure access to our Script and operation of our Script may be interfered with or adversely affected by numerous factors or circumstances outside of our control.
+ 
+6. Third-Party Sites
+ 
+Our Script may include links to other sites on the Internet that are owned and operated by online merchants and other third parties. You acknowledge that we are not responsible for the availability of, or the content located on or through, any third-party site. You should contact the site administrator or webmaster for those third-party sites if you have any concerns regarding such links or the content located on such sites. Your use of those third-party sites is subject to the terms of use and privacy policies of each site, and we are not responsible therein.
+ 
+7. Disclaimer Regarding Accuracy of Practitioner
+ 
+Information, analysis,  reports, services provided and other information have either been provided by the practitioners. While We make every effort to ensure that the information produce by this Script is accurate; we can make no representations or warranties as to the accuracy or reliability of any information produced by this Script. ALL INFORMATION OBTAOBTAINED OR GEGENERATED BY THIS SCRIPT OR PROVIDERS SHOULD BE USED FOR ENTERTAINMENT PURPOSES ONLY.
+ 
+8. Governing Jurisdiction of The New York Courts
+Our Scripts are operated and provided in the State of New York. As such, we are subject to the laws of the State New York, and such laws will govern this Terms & Conditions, without giving effect to any choice of law rules. We make no representation that our Website or other services are appropriate, legal or available for use in other locations. Accordingly, if you choose to access our site you agree to do so subject to the internal laws of the State New York.
+ 
+ 
+9. Compliance with Laws
+User assumes all knowledge of applicable law and is responsible for compliance with any such laws. User may not use the Service in any way that violates applicable state, federal, or international laws, regulations or other government requirements. User further agrees not to transmit any material that encourages conduct that could constitute a criminal offense, give rise to civil liability or otherwise violate any applicable local, state, national, or international law or regulation.
+ 
+10. Notification of Claimed Copyright Infringement
+ 
+Please contact support@dojo.co to report any potential copyright claims on the Script.
+ 
+11. Other Terms
+If any provision of these Terms & Conditions shall be unlawful, void or unenforceable for any reason, the other provisions (and any partially-enforceable provision) shall not be affected thereby and shall remain valid and enforceable to the maximum possible extent. You agree that this Terms & Conditions and any other agreements referenced herein may be assigned by us, in our sole discretion, to a third-party in the event of a merger or acquisition. These Terms & Conditions shall apply in addition to, and shall not be superseded by, any other written agreement between us in relation to your participation as a User. We reserve the right to deny service, revoke credits, void gift cards, cancel promotions to any customer with or without prejudice. User agrees that by accepting this Terms & Conditions, User is consenting to the use and disclosure of their personally identifiable information and other practices described in our Privacy Policy Statement. If you do not comply with these terms, and we don't take action right away, this doesn't mean that we are giving up any rights that we may have (such as taking action in the future). If it turns out that a particular term is not enforceable, this will not affect any other terms.
+ 
+
