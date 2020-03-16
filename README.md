@@ -6,6 +6,8 @@ BackTrack scans through GSuite or Outlook calendars and tells you whom a sick em
 
 The team at Dojo repurposed an existing app (whose "day job" is enabling us to design better offices) and released it to help companies alert other employees who may be at-risk in order to protect them, their families, and the broader community.
 
+The results are not meant to be 100% conclusive or comprehensive. They can have both false positives and false negatives. Our goal is to err on the side of caution and save valuable time when a co-worker develops symptoms.
+
 If you are using this script at your company, we would love it if you would let us know. Please send a quick email to BackTrack@dojo.co and let us know how it’s working!
 
 
