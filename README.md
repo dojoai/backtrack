@@ -13,4 +13,4 @@ If you are using this script at your company, we would love it if you would let 
 
 Please look in the GSuite directory for code and setup instruction.
 
-Note: Outlook tool is coming ASAP!
+Note: Outlook tool is coming ASAP! We are just debugging the code. If you need it urgently, please reach out at BackTrack@dojo.co
