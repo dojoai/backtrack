@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script>
+        var DIALOG_DIMENSIONS = {
+            width: 600,
+            height: 425
+        };
+
+        var settings = JSON.parse(<?= settings ?>);
+        var before = <?= before ?>;
+        var after = <?= after ?>;
+
+        $(document).ready(function() {
+            $("#domain_admin").val(settings.domainAdmin)
+            $("#domain").val(settings.domain)
+            $("#after").val(after)
+            $("#before").val(before)
+            $("#start").val(settings.startTime)
+            $("#end").val(settings.endTime)
+            $("#token_uri").val(settings.token_uri)
+            $("#client_id").val(settings.client_id)
+            $("#client_email").val(settings.client_email)
+            $("#private_key").val(settings.private_key)
+            $("#project_id").val(settings.project_id)
+            $("#project_id_label").text(settings.project_id)
+            $("#maxScriptRunTimeMin").val(settings.maxScriptRunTimeMin)
+            $("#int").attr('checked', settings.internalOnly == "true")
+            $("#intext").attr('checked', settings.internalOnly != "true")
+
+
+
+            $("#service_account").change(function() {
+                try {
+                    var files = this.files;
+                    $("#token_uri").val("")
+                    $("#client_id").val("")
+                    $("#client_email").val("")
+                    $("#private_key").val("")
+                    $("#project_id").val("")
+                    $("#project_id_label").text("")
+
+                    if (files.length === 0) {
+                        console.log('No file is selected');
+                        return;
+                    }
+                    var reader = new FileReader();
+                    reader.onload = function(event) {
+                        try {
+                            var json = JSON.parse(event.target.result)
+                            if (!(json.private_key && json.client_email && json.client_id && json.auth_uri && json.token_uri)) {
+                                throw "Invalid private key JSON file"
+                            }
+
+                            $("#token_uri").val(json.token_uri)
+                            $("#client_id").val(json.client_id)
+                            $("#client_email").val(json.client_email)
+                            $("#private_key").val(json.private_key)
+                            $("#project_id").val(json.project_id)
+                            $("#project_id_label").text(json.project_id)
+                        } catch (e) {
+                            onFailure(e)
+                        }
+                    };
+                    reader.readAsText(files[0]);
+                    hideError()
+                } catch (e) {
+                    onFailure(e)
+                }
+            })
+        })
+
+        window.addEventListener('load', preventFormSubmit);
+
+
+        function isFormInValid() {
+            if ($("#before").val() == "" && $("#after").val() == "") return "Start and End Dates are required"
+            if (($("#before").val() != "" || $("#after").val() != "") && $("#before").val() < $("#after").val()) return "End Date must occur after Start Date"
+            if ($("#domain").val() == "") return "Domain is required"
+            if ($("#domain_admin").val() == "") return "Domain Admin is required"
+            if ($("#project_id").val() == "") return "Service Account JSON file is required"
+            if ($("#maxScriptRunTimeMin").val() < 1) return "Max script runtime must be at least 1 minute"
+
+
+            return false
+        }
+
+
+        // Prevent forms from submitting.
+        function preventFormSubmit() {
+            var forms = document.querySelectorAll('form');
+            for (var i = 0; i < forms.length; i++) {
+                forms[i].addEventListener('submit', function(event) {
+                    event.preventDefault();
+                });
+            }
+        }
+
+        function handleFormSubmit(formObject) {
+
+            var inValid = isFormInValid()
+            if (inValid) {
+                onFailure(inValid)
+                return
+            }
+
+            // for Backtrack, always the same
+            $('#getEvents').val("true")
+            $('#getMessages').val("false")
+            $('#internalOnly').val($('input:radio[name="intext"]:checked').val() == 'int')
+
+            google.script.run
+                .withSuccessHandler(onSuccess)
+                .withFailureHandler(onFailure)
+                .processSettings(formObject);
+        }
+
+        function clearSettings() {
+            if (!confirm('Are you sure you want to clear all settings?')) {
+                return
+            }
+
+            google.script.run
+                .withSuccessHandler(onSuccess)
+                .withFailureHandler(onFailure)
+                .clearSettings();
+        }
+
+        function onFailure(e) {
+            console.log(e)
+            var error = document.getElementById("error")
+            error.innerText = e
+            error.style.visibility = "visible"
+        }
+
+        function onSuccess() {
+            hideError()
+            google.script.host.close();
+        }
+
+        function hideError() {
+            var error = document.getElementById("error")
+            error.innerText = ""
+            error.style.visibility = "hidden"
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            border-width: 1px;
+            border-style: none;
+        }
+
+        td label {
+            width: 200px;
+            display: block;
+        }
+
+        tr input {
+            width: 200px;
+        }
+
+        .checkbox {
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form" onsubmit="handleFormSubmit(this)">
+        <input id="token_uri" name="token_uri" type="hidden" />
+        <input id="auth_uri" name="auth_uri" type="hidden" />
+        <input id="client_id" name="client_id" type="hidden" />
+        <input id="client_email" name="client_email" type="hidden" />
+        <input id="private_key" name="private_key" type="hidden" />
+        <input id="project_id" name="project_id" type="hidden" />
+        <input id="getEvents" name="getEvents" type="hidden" />
+        <input id="getMessages" name="getMessages" type="hidden" />
+        <input id="internalOnly" name="internalOnly" type="hidden" />
+
+        <table>
+            <colgroup>
+                <col id=" label" />
+                <col id="input" />
+            </colgroup>
+
+            <tr>
+                <td colspan="2" style="line-height:10px">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td><input type="radio" id="int" name="intext" class='checkbox' value='int'>Internal Only</input>
+                </td>
+
+                <td><input type="radio" id="intext" name="intext" class='checkbox' value='intext'>Internal &amp; External</input>
+                </td>
+            </tr>
+
+            <tr style="border-bottom:1px solid #A9A9A9">
+                <td colspan="2" style="line-height:20px">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="line-height:20px">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="after">Start Date</label>
+                </td>
+                <td>
+                    <input id="after" name="after" type="date" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="before">End Date</label>
+                </td>
+                <td>
+                    <input id="before" name="before" type="date" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="start">Day Start Time</label>
+                </td>
+                <td>
+                    <input id="start" name="startTime" type="time" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="end">Day End Time</label>
+                </td>
+                <td>
+                    <input id="end" name="endTime" type="time" />
+                </td>
+            </tr>
+
+            <tr style="border-bottom:1px solid #A9A9A9">
+                <td colspan="2" style="line-height:25px">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="line-height:20px">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="domain">Domain</label><input id="domain" name="domain" type="text" />
+                </td>
+                <td>
+                    <label for="domain_admin">Domain Admin Email</label><input id="domain_admin" name="domainAdmin" type="email" />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="service_account">Service Account (JSON)</label>
+                </td>
+                <td>
+                    <input id="service_account" name="serviceAccount" type="file" />
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div id="project_id_label"></div>
+                </td>
+            </tr>
+
+            <tr style="border-bottom:1px solid #A9A9A9">
+                <td colspan="2" style="line-height:25px">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="line-height:20px">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td><label for="maxScriptRunTimeMin">Max script runtime</label></td>
+                <td><input id="maxScriptRunTimeMin" name="maxScriptRunTimeMin" type="number" style="width: 4em" min="1" /></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" style="line-height:30px">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="submit" id="okbutton" value="Ok" />
+                </td>
+
+                <td>
+                    <input type="button" id="clear" value="Clear Settings" onclick="clearSettings()" />
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><label id="error"></label></td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+
+</html>
